@@ -1,0 +1,1 @@
+Study and review FastAPI
