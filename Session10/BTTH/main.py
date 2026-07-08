@@ -5,8 +5,8 @@ from fastapi import FastAPI, Depends
 # Field dùng để cấu hình thêm cho các trường dữ liệu (ở đây chưa dùng)
 from pydantic import BaseModel, Field
 
-# Import Base và Engine để tạo bảng trong database
-from database import Base, engine
+# Import Base
+from model import Base
 
 # Import hàm xử lý nghiệp vụ tạo shipment
 from service import create_shipment
@@ -14,8 +14,8 @@ from service import create_shipment
 # Kiểu dữ liệu Session của SQLAlchemy
 from sqlalchemy.orm import Session
 
-# Hàm lấy Session kết nối database
-from database import get_db
+# Hàm lấy Session kết nối database và lấy Engine để tạo bảng trong database
+from database import get_db, engine
 
 # Nếu bảng chưa tồn tại thì tự động tạo
 # Nếu bảng đã có thì bỏ qua
